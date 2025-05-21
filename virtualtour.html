@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <style>
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(20,24,30,0.96);
+            align-items: center; justify-content: center;
+            overflow-y: auto;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            position: relative;
+            width: 90vw; max-width: 1200px;
+            background: #fff;
+            border-radius: 0.5em;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            margin: 3vh auto;
+            padding: 1.5em 1em 1em 1em;
+            animation: modalPop 0.3s cubic-bezier(.4,2,.6,1);
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.96) translateY(40px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .modal-close {
+            position: absolute;
+            top: 0.5em; left: 1em;
+            font-size: 2rem;
+            background: none; border: none;
+            color: #212931;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.2s;
+        }
+        .modal-close:hover { color: #18bfef; }
+        @media (max-width: 600px) {
+            .modal-content { width: 98vw; padding: 0.5em; }
+            #virtualTourIframe { height: 70vh; }
+        }
+    </style>
+
+
+
+    <body>
+        <title>VirtualTours - Craft3d</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+        <!-- Virtual Tour Modal Overlay -->
+        <div id="virtualTourModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" id="closeVirtualTourModal" aria-label="Close">&times;</button>
+                <iframe id="virtualTourIframe" src="" frameborder="0" allowfullscreen style="width:100%;height:80vh;border-radius:0.5em;"></iframe>
+            </div>
+        </div>
+
+    
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <a href="virtualtour.html" class="logo">Craft3d</a>
+            </header>
+
+            <!-- Nav -->
+            <nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="virtualtour.html">Tours</a></li>
+							<li><a href="#footer">Contact</a></li>
+							<!-- <li><a href="elements.html">Elements Reference</a></li> -->
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.pinterest.com/3dcraftke/" class="icon brands alt fa-pinterest"><span class="label">Pinterest</span></a></li>
+                            <li><a href="https://www.behance.net/3dcraftke/" class="icon brands alt fa-behance"><span class="label">Behance</span></a></li>
+                            <li><a href="https://www.instagram.com/3dcraftke/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://github.com/Nguriathi?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+            <!-- Main -->
+            <div id="main">
+
+
+                    <!-- Bathroom Tour  -->
+                    <article class="post featured">
+                        <header class="major">
+                            <h2>Bathroom Virtual Tour</h2>
+                        </header>
+                        <div id="bathroom" class="image main" style="height: 400px; position: relative;"></div>
+                        <ul class="actions special">
+                            <li><a href="#" class="button large open-tour-modal" data-tour="tours/bathroom/index.html">View Tour</a></li>
+                        </ul>
+                    </article>
+
+                    <!-- Apartment Tour -->
+                    <article class="post featured">
+                        <header class="major">
+                            <h2>Apartment Virtual Tour</h2>
+                            
+                        </header>
+                        <div id="apartment" class="image main" style="height: 400px; position: relative;"></div>
+                        <ul class="actions special">
+                            <li><a href="#" class="button large open-tour-modal" data-tour="tours/apartment/index.html">View Tour</a></li>
+                        </ul>
+                    </article>
+
+                    <!-- Massionete Tour -->
+                    <article class="post featured">
+                        <header class="major">
+                            <h2>Massionette Virtual Tour</h2>
+                            
+                        </header>
+                        <div id="massionete" class="image main" style="height: 400px; position: relative;"></div>
+                        <ul class="actions special">
+                            <li><a href="#" class="button large open-tour-modal" data-tour="tours/massionete/index.html">View Tour</a></li>
+                        </ul>
+                    </article>
+            </div>
+            
+
+            <!-- Footer -->
+            <footer id="footer">
+                <section>
+                    <form method="post" action="https://formspree.io/f/mwpoyqlv">
+                        <div class="fields">
+                            <div class="field">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" /></li>
+                        </ul>
+                    </form>
+                </section>
+                <section class="split contact">
+                
+                    <section>
+                        <h3>Social</h3>
+                        <ul class="icons alt">
+                            <li><a href="https://www.pinterest.com/3dcraftke/" class="icon brands alt fa-pinterest"><span class="label">Pinterest</span></a></li>
+                            <li><a href="https://www.behance.net/3dcraftke/" class="icon brands alt fa-behance"><span class="label">Behance</span></a></li>
+                            <li><a href="https://www.instagram.com/3dcraftke/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="https://github.com/Nguriathi?tab=repositories" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>
+                    </section>
+                </section>
+            </footer>
+
+            <!-- Copyright -->
+            <div id="copyright">
+                <ul><li>&copy; craft3d</li><li>Design: <a href="virtualtour.html">3dgeneralist</a></li></ul>
+            </div>
+
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+                
+
+                <script>
+                pannellum.viewer('massionete', {
+                    type: "equirectangular",
+                    panorama: "images/360s/House/2.jpg", // 360 image
+                    autoLoad: true,
+                    autoRotate: -2,
+                    compass: false
+                });
+
+                pannellum.viewer('apartment', {
+                    type: "equirectangular",
+                    panorama: "images/360s/Balcony.jpg", // 360 image
+                    autoLoad: true,
+                    autoRotate: -2,
+                    compass: false
+                });
+
+                pannellum.viewer('bathroom', {
+                    type: "equirectangular",
+                    panorama: "images/360s/bathroom360.jpg", // 360 image
+                    autoLoad: true,
+                    autoRotate: -2,
+                    compass: false
+                });
+                </script>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Open modal and set iframe src
+                    document.querySelectorAll('.open-tour-modal').forEach(function(btn) {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            var tourUrl = this.getAttribute('data-tour');
+                            var modal = document.getElementById('virtualTourModal');
+                            var iframe = document.getElementById('virtualTourIframe');
+                            iframe.src = tourUrl;
+                            modal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        });
+                    });
+
+                    // Close modal
+                    document.getElementById('closeVirtualTourModal').onclick = function() {
+                        var modal = document.getElementById('virtualTourModal');
+                        var iframe = document.getElementById('virtualTourIframe');
+                        modal.classList.remove('active');
+                        iframe.src = "";
+                        document.body.style.overflow = '';
+                    };
+
+                    // Click outside modal content closes
+                    document.getElementById('virtualTourModal').onclick = function(e) {
+                        if (e.target === this) {
+                            this.classList.remove('active');
+                            document.getElementById('virtualTourIframe').src = "";
+                            document.body.style.overflow = '';
+                        }
+                    };
+
+                    // ESC key closes modal
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === "Escape") {
+                            var modal = document.getElementById('virtualTourModal');
+                            modal.classList.remove('active');
+                            document.getElementById('virtualTourIframe').src = "";
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+                </script>
+
+
+
+    </body>
+</html>
